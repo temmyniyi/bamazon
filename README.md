@@ -1,51 +1,45 @@
-# bamazon
-10th Homework Assignment for Trilogy Ed/UPenn Coding Bootcamp - Build a command line app the mimics an amazon online store using nodejs and mysql
+# Bamazon
 
+This activity was for week 12 of my Penn Boot Camp coursework. This week's challenge was to create an Amazon-like store that allows customers to place orders, and depletes the stock quantity as the orders are successfully filled. There's also a manager console that allows users to view what is on sale, check which items are about to run out, and add additional inventory to an item, and add a brand new item for sale. Supervisors can track product sales across departments and see which departments are making the most money.
 
+## Video 
+[Click here to view a Bamazon demo](https://embed.vidyard.com/share/UtydV5wznNf22ZkbA9FfBA? "Named link title") 
 
+## Technologies Used
+* Node.js
+* Javascript 
+* NPM Packages 
+    * mysql
+    * inquirer 
+* mySQL
 
-## DEMO
-To see a demo of this CLI node app in action check out the video:
+## Features 
 
+* Customers 
+    * Load the Bamazon storefront and view the 'thunderbolt' deals (list of products)
+    * Select and item and quantity
+        * Warns when the user selects a quantity that is greater than what's in stock
+    * Confirm purchase (or not)
+        * Decrements the stock quantity and increments the sales total for the item if confirmed
 
+* Managers 
+    * View a list of products currently for sale in the storefront 
+    * View and manage inventory 
+        * See a list of products with inventory under 25 items
+        * Choose a product to add inventory to 
+    * Add new products to the product list 
 
-## Overview
-In this activity, you'll be creating an Amazon-like storefront with the MySQL skills you learned this week. The app will take in orders from customers and deplete stock from the store's inventory.
+* Supervisors 
+    * View a table of sales by department 
+        * Takes data from both tables in the app, and joins them 
+        * Total profit is calculated on the fly when the table is generated 
+    * Add a new department to the store 
 
-## Instructions
+## Backlog
+* Refactor the customer flow. I definitely was more confident in the manager and supervisor flow. 
+* Add some confirmations when the user adds a department or a product before asking to add another one. 
+* Add an actual front end onto the app. 
 
-### Customer View 
-
-1. Create a MySQL Database called `bamazon`.
-
-2. Then create a Table inside of that database called `products`.
-
-3. The products table should have each of the following columns:
-
-   * item_id (unique id for each product)
-
-   * product_name (Name of product)
-
-   * department_name
-
-   * price (cost to customer)
-
-   * stock_quantity (how much of the product is available in stores)
-
-4. Populate this database with around 10 different products. (i.e. Insert "mock" data rows into this database and table).
-
-5. Then create a Node application called `bamazonCustomer.js`. Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
-
-6. The app should then prompt users with two messages.
-
-   * The first should ask them the ID of the product they would like to buy.
-   * The second message should ask how many units of the product they would like to buy.
-
-7. Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
-
-   * If not, the app should log a phrase like `Insufficient quantity!`, and then prevent the order from going through.
-
-8. However, if your store _does_ have enough of the product, you should fulfill the customer's order.
-   * This means updating the SQL database to reflect the remaining quantity.
-   * Once the update goes through, show the customer the total cost of their purchase.
+## My Role 
+I was the sole developer on this project and was provided academic support from my TAs and Instructor when I got stuck. 
 
